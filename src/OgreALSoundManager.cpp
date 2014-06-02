@@ -36,7 +36,11 @@
 #include "OgreALException.h"
 #include "OgreALSoundManager.h"
 
+#if OGRE_VERSION_MAJOR == 1 && OGRE_VERSION_MINOR > 7
+template<> OgreAL::SoundManager* Ogre::Singleton<OgreAL::SoundManager>::msSingleton = 0;
+#else
 template<> OgreAL::SoundManager* Ogre::Singleton<OgreAL::SoundManager>::ms_Singleton = 0;
+#endif
 
 #if OGREAL_THREADED
 	boost::thread *OgreAL::SoundManager::mOgreALThread = 0;
@@ -147,15 +151,25 @@ namespace OgreAL {
 		alcCloseDevice(mDevice);
 	}
 
-	SoundManager* SoundManager::getSingletonPtr(void)
-	{
-		return ms_Singleton;
-	}
+        SoundManager* SoundManager::getSingletonPtr(void)
+        {
+#if OGRE_VERSION_MAJOR == 1 && OGRE_VERSION_MINOR > 7
+                return msSingleton;
+#else
+                return ms_Singleton;
+#endif   
+        }
 
-	SoundManager& SoundManager::getSingleton(void)
-	{  
-		assert( ms_Singleton );  return (*ms_Singleton);  
-	}
+        SoundManager& SoundManager::getSingleton(void)
+        {  
+#if OGRE_VERSION_MAJOR == 1 && OGRE_VERSION_MINOR > 7
+                assert( msSingleton );
+                return (*msSingleton);
+#else
+                assert( ms_Singleton );
+                return (*ms_Singleton);
+#endif
+        }
 
 	Sound* SoundManager::createSound(const Ogre::String& name, 
 		const Ogre::String& fileName, bool loop, bool stream)

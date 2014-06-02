@@ -70,7 +70,7 @@ void OgreApp::start()
 
 void OgreApp::createScene()
 {
-	sceneMgr->setSkyBox(true, "Sky", 5, 8, 4000);
+	sceneMgr->setSkyBox(true, "Sky");
     sceneMgr->setAmbientLight(ColourValue(0.5f, 0.5f, 0.5f));
     sceneMgr->setShadowTechnique(SHADOWTYPE_STENCIL_ADDITIVE);
 

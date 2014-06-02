@@ -36,7 +36,11 @@
 #include "OgreALException.h"
 #include "OgreALListener.h"
 
+#if OGRE_VERSION_MAJOR == 1 && OGRE_VERSION_MINOR > 7
+template<> OgreAL::Listener* Ogre::Singleton<OgreAL::Listener>::msSingleton = 0;
+#else
 template<> OgreAL::Listener* Ogre::Singleton<OgreAL::Listener>::ms_Singleton = 0;
+#endif
 
 namespace OgreAL {
 	Listener::Listener() :
@@ -70,15 +74,25 @@ namespace OgreAL {
 	Listener::~Listener()
 	{}
 
-	Listener* Listener::getSingletonPtr(void)
-	{
-		return ms_Singleton;
-	}
+        Listener* Listener::getSingletonPtr(void)
+        {
+#if OGRE_VERSION_MAJOR == 1 && OGRE_VERSION_MINOR > 7
+                return msSingleton;
+#else
+                return ms_Singleton;
+#endif
+        }
 
-	Listener& Listener::getSingleton(void)
-	{  
-		assert(ms_Singleton);  return (*ms_Singleton);  
-	}
+        Listener& Listener::getSingleton(void)
+        {  
+#if OGRE_VERSION_MAJOR == 1 && OGRE_VERSION_MINOR > 7
+               assert(msSingleton);
+               return (*msSingleton);
+#else
+               assert(ms_Singleton);
+               return (*ms_Singleton);
+#endif
+        }
 
 	void Listener::setGain(Ogre::Real gain)
 	{
