@@ -3,7 +3,7 @@
 
 #include "OgreCamera.h"
 #include "OgreFrameListener.h"
-#include "OgreOverlayManager.h"
+#include "Overlay/OgreOverlayManager.h"
 #include "OgreRenderWindow.h"
 #include "OgreStringConverter.h"
 #include "OgreTextAreaOverlayElement.h"

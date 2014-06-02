@@ -10,7 +10,7 @@
 #include <OgreMeshManager.h>
 #include <Overlay/OgreOverlayContainer.h>
 #include <OgreRoot.h>
-#include <OgreTextAreaOverlayElement.h>
+#include <Overlay/OgreTextAreaOverlayElement.h>
 #include <OgreFontManager.h>
 
 #include "Listener.h"
