@@ -8,7 +8,7 @@
 #include <OgreLight.h>
 #include <OgreLogManager.h>
 #include <OgreMeshManager.h>
-#include <OgreOverlayContainer.h>
+#include <Overlay/OgreOverlayContainer.h>
 #include <OgreRoot.h>
 #include <OgreTextAreaOverlayElement.h>
 #include <OgreFontManager.h>
