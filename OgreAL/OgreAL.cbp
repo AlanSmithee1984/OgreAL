@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="OgreAL" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="../lib/Debug/OgreAL_d.so" prefix_auto="1" extension_auto="1" />
+				<Option object_output="../lib/Debug" />
+				<Option type="3" />
+				<Option compiler="gcc" />
+				<Option createDefFile="1" />
+				<Option createStaticLib="1" />
+				<Compiler>
+					<Add option="-g" />
+					<Add directory="../../ogrenew/OgreMain/include" />
+					<Add directory="../include" />
+					<Add directory="../../ogg/include" />
+					<Add directory="../../vorbis/include" />
+				</Compiler>
+				<Linker>
+					<Add library="OgreMain" />
+					<Add library="vorbis" />
+					<Add library="vorbisfile" />
+					<Add library="ogg" />
+				</Linker>
+				<ExtraCommands>
+					<Add after='cmd /c copy $(DEBUG_OUTPUT_FILE) &quot;../Demos/bin/Debug&quot;' />
+					<Add after='cmd /c copy $(ALUT_BIN)\lib\alut.dll &quot;../Demos/bin/Debug&quot;' />
+				</ExtraCommands>
+			</Target>
+			<Target title="Release">
+				<Option output="../lib/Release/OgreAL.so" prefix_auto="1" extension_auto="1" />
+				<Option object_output="Release" />
+				<Option type="3" />
+				<Option compiler="gcc" />
+				<Option createDefFile="1" />
+				<Option createStaticLib="1" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+				<Linker>
+					<Add library="OgreMain" />
+					<Add library="OpenAL32" />
+					<Add library="vorbis_static" />
+					<Add library="vorbisfile_static" />
+					<Add library="ogg_static" />
+					<Add directory="$(OGRE_SRC)/OgreMain/lib/Release" />
+					<Add directory="$(OGRE_HOME)/bin/Release" />
+					<Add directory="$(OPENAL_SDK)/libs/Win32" />
+					<Add directory="$(ALUT_BIN)/lib" />
+					<Add directory="../../ogg/win32/Static_Release" />
+					<Add directory="../../vorbis/win32/Vorbis_Static_Release" />
+					<Add directory="../../vorbis/win32/VorbisFile_Static_Release" />
+				</Linker>
+				<ExtraCommands>
+					<Add after='cmd /c copy $(RELEASE_OUTPUT_FILE) &quot;../Demos/bin/Release&quot;' />
+					<Add after='cmd /c copy $(ALUT_BIN)\lib\alut.dll &quot;../Demos/bin/Release&quot;' />
+				</ExtraCommands>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add option="-g" />
+			<Add option="-fPIC" />
+			<Add option="-DOGRE_AL_EXPORT" />
+			<Add directory="/../../ogrenew/OgreMain/include" />
+			<Add directory="../include" />
+			<Add directory="../../ogg/include" />
+			<Add directory="../../vorbis/include" />
+		</Compiler>
+		<Linker>
+			<Add directory="../../ogrenew/lib" />
+			<Add directory="/usr/local/lib/OGRE" />
+		</Linker>
+		<Unit filename="../include/OgreAL.h" />
+		<Unit filename="../include/OgreALListener.h" />
+		<Unit filename="../include/OgreALOggSound.h" />
+		<Unit filename="../include/OgreALPrereqs.h" />
+		<Unit filename="../include/OgreALSound.h" />
+		<Unit filename="../include/OgreALSoundManager.h" />
+		<Unit filename="../include/OgreALWavSound.h" />
+		<Unit filename="../src/OgreALListener.cpp" />
+		<Unit filename="../src/OgreALOggSound.cpp" />
+		<Unit filename="../src/OgreALSound.cpp" />
+		<Unit filename="../src/OgreALSoundManager.cpp" />
+		<Unit filename="../src/OgreALWavSound.cpp" />
+		<Extensions>
+			<code_completion />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

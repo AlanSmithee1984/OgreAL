@@ -1,0 +1,10 @@
+# Resource locations to be added to the default path
+[General]
+FileSystem=@OGREAL_MEDIADIR@
+FileSystem=@OGREAL_MEDIADIR@/Audio
+FileSystem=@OGREAL_MEDIADIR@/Gui
+FileSystem=@OGREAL_MEDIADIR@/Materials/Scripts
+FileSystem=@OGREAL_MEDIADIR@/Materials/Textures
+FileSystem=@OGREAL_MEDIADIR@/Models
+Zip=@OGREAL_MEDIADIR@/Materials/Textures/cubemapsJS.zip
+Zip=@OGREAL_MEDIADIR@/Materials/bguires.zip 

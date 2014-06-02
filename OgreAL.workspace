@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_workspace_file>
+	<Workspace title="OgreAL workspace">
+		<Project filename="Demos/Doppler_Demo/Doppler_Demo.cbp">
+			<Depends filename="OgreAL/OgreAL.cbp" />
+		</Project>
+		<Project filename="Demos/Directional_Demo/Directional_Demo.cbp">
+			<Depends filename="OgreAL/OgreAL.cbp" />
+		</Project>
+		<Project filename="Demos/MultiChannel_Demo/MultiChannel_Demo.cbp">
+			<Depends filename="OgreAL/OgreAL.cbp" />
+		</Project>
+		<Project filename="OgreAL/OgreAL.cbp" />
+		<Project filename="Demos/Basic_Demo/Basic_Demo.cbp" active="1">
+			<Depends filename="OgreAL/OgreAL.cbp" />
+		</Project>
+		<Project filename="Demos/ManySources_Demo/ManySources_Demo.cbp" />
+		<Project filename="Demos/PlayPen/PlayPen.cbp" />
+	</Workspace>
+</CodeBlocks_workspace_file>
