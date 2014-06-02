@@ -11,7 +11,7 @@
 #include <Overlay/OgreOverlayContainer.h>
 #include <OgreRoot.h>
 #include <Overlay/OgreTextAreaOverlayElement.h>
-#include <OgreFontManager.h>
+#include <Overlay/OgreFontManager.h>
 
 #include "Listener.h"
 #include "OgreAL.h"

@@ -6,7 +6,7 @@
 #include "Overlay/OgreOverlayManager.h"
 #include "OgreRenderWindow.h"
 #include "OgreStringConverter.h"
-#include "OgreTextAreaOverlayElement.h"
+#include "Overlay/OgreTextAreaOverlayElement.h"
 #include "OgreWindowEventUtilities.h"
 
 #include "OIS/OISInputManager.h"
